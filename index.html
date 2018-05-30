@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div id = "start" class = "card small initial center-align z-depth-5">
+            <h4 id = "title">Rock, Paper, Scissors!</h4>
+            <div class = "max-game">
+                <p id = "question">How many wins until the game ends?<p>
+                <div class="input-field row">
+                    <input id="max-game-num" type="number" class="validate">
+                </div>
+                <button class = "btn" id = "start-game" ><i class="material-icons left">forward</i>Play</button>
+            </div>
+        </div>
+
+        <div id = "game" class="card-panel center-align" style = "display: none">
+            <div class = "row">
+                <div id = "images">
+                        <span id = "img_0"><img src = "0.png"></span>
+                        <span id = "img_1"><img src = "1.png"></span>
+                        <span id = "img_2"><img src = "2.png"></span>
+                </div>
+                <span id = "opp-choice"></span>
+            </div>
+                <div id = "try-again" class = "row" style = "display: none">
+                    <button class = "btn"><i class="ion-ios-plus-outline"></i>Try Again</button>
+                </div>
+                <div class = "row ">
+                    <div class="player-0-panel col s6 active">
+                        <div class="player-name" id="name-0">You</div>
+                        <div class="player-score" id="score-0">0</div>
+                    </div>
+                    
+                    <div class="player-1-panel col s6">
+                        <div class="player-name" id="name-1">Opponent</div>
+                        <div class="player-score" id="score-1">0</div>
+                    </div>
+                </div>
+                <div id = "status" style = "display: none" >
+                    <div id = "win" class = "row" style = "display: none">
+                            <h3>You win!</h3>
+                    </div>
+                    <div id = "lose" class = "row" style = "display: none">
+                            <h3>You lose!</h3>
+                    </div>
+                    <div id = "tie" class = "row" style = "display: none">
+                            <h3>Tie! Score doesn't change.</h3>
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = "col s12">
+                        <button id = "new-game" class="btn inline"><i class="ion-ios-plus-outline"></i>New game</button>
+                    </div>
+                </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+        <script src = "main.js"></script>
+    </body>
+</html>
