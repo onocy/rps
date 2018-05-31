@@ -60,12 +60,38 @@ function newGame(){
   maxWinAmt = 0;
 }
 
+<<<<<<< HEAD
 function guess(val) {
   //opponentGuesses
   var opponentChoice = Math.floor((Math.random() * 3))
   roundEnd(val, opponentChoice);
   document.getElementById('try-again').style.display = "block";
   document.getElementById('opp-choice').innerHTML = "<h5>Opponent Chooses: </h5>" + "<img src = '" + opponentChoice + ".png'>";
+=======
+function endRound(val){
+    //increment score values
+    switch(val){ //win, lose, tie
+        case 1:
+            document.getElementById('win').style.display = "block";
+            document.getElementById('lose').style.display = "none";
+            document.getElementById('tie').style.display = "none";
+            scores[0]++;
+        case -1: 
+            document.getElementById('win').style.display = "none";
+            document.getElementById('lose').style.display = "block";
+            document.getElementById('tie').style.display = "none";
+            scores[1]++;
+        case 0: 
+            document.getElementById('win').style.display = "none";
+            document.getElementById('lose').style.display = "none";
+            document.getElementById('tie').style.display = "block";    
+    }
+    document.getElementById('opp-choice').innerHTML = "<h3>Opponent Chooses: </h3>" + "<img src = '" + opponentChoice + ".png'>";
+    console.log("<img src = '" + opponentChoice + ".png'>");
+    document.getElementById('status').style.display = "block";
+    document.getElementById('try-again').style.display = "block";
+    document.getElementById('images').style.display = "none";
+>>>>>>> 81bfe7765a2f273ad888f774b5fa72cc4b8cc457
 }
 
 // 0 = scissors, 1 = rock, 2 = paper
