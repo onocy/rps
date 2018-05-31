@@ -51,7 +51,6 @@ function checkGame(a, b){
 
 function endRound(val){
     //increment score values
-    
     switch(val){ //win, lose, tie
         case 1:
             document.getElementById('win').style.display = "block";
