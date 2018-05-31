@@ -5,7 +5,6 @@ init();
 function init() {
   scores = [0, 0];
   addButtonEvents();
-  //check if nothing entered
   checkEndState();
 }
 
@@ -21,7 +20,6 @@ function addButtonEvents(){
     document.getElementById('start').style.display = "none";
     document.getElementById('game').style.display = "block";
     document.getElementById('images').style.display = "block";
-
   });
 
   // New Game Button
@@ -60,12 +58,12 @@ function newGame(){
   maxWinAmt = 0;
 }
 
+//opponentGuesses
 function guess(val) {
-  //opponentGuesses
   var opponentChoice = Math.floor((Math.random() * 3))
-  roundEnd(val, opponentChoice);
   document.getElementById('try-again').style.display = "block";
   document.getElementById('opp-choice').innerHTML = "<h5>Opponent Chooses: </h5>" + "<img src = '" + opponentChoice + ".png'>";
+  roundEnd(val, opponentChoice);
 }
 
 // 0 = scissors, 1 = rock, 2 = paper
@@ -79,7 +77,8 @@ function roundEnd(yourGuess, opponentGuess) {
 }
 
 function endRound(val) {
-  //increment score values
+  document.getElementById('try-again').style.display = "block";
+  document.getElementById('images').style.display = "none";
   switch (val) {
     case 'win':
       roundWin();
@@ -91,8 +90,6 @@ function endRound(val) {
       roundTie();
       break;
   }
-  document.getElementById('try-again').style.display = "block";
-  document.getElementById('images').style.display = "none";
 }
 
 /*  Round Over */
@@ -117,7 +114,6 @@ function roundTie(){
 }
 
 function checkEndState() {
-  console.log(scores);
   if(scores[0] >= maxWinAmt){
      endWin();
   }
@@ -131,14 +127,14 @@ function checkEndState() {
 function endWin(){
   // Add end game text
   console.log('win');
-  document.getElementById('status').innerHTML = "Game Over. You Win!";
   document.getElementById('images').style.display = "none";
   document.getElementById('try-again').style.display = "none";
+  document.getElementById('status').innerHTML = "Game Over. You Win!";
 }
 
 function endLoss(){
   console.log('loss');
-  document.getElementById('status').innerHTML = "Game Over. You Lose!";
   document.getElementById('images').style.display = "none";
   document.getElementById('try-again').style.display = "none";
+  document.getElementById('status').innerHTML = "Game Over. You Lose!";
 }
