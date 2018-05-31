@@ -1,4 +1,4 @@
-<html>
+  <html>
     <head>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
@@ -12,6 +12,7 @@
                 <div class="input-field row">
                     <input id="max-game-num" type="number" class="validate">
                 </div>
+                <div id = "error"></div>
                 <button class = "btn" id = "start-game" ><i class="material-icons left">forward</i>Play</button>
             </div>
         </div>
@@ -30,25 +31,17 @@
                 </div>
                 <div class = "row ">
                     <div class="player-0-panel col s6 active">
-                        <div class="player-name" id="name-0">You</div>
+                        <div class="player-name green-text" id="name-0">YOU</div>
                         <div class="player-score" id="score-0">0</div>
                     </div>
-                    
+
                     <div class="player-1-panel col s6">
-                        <div class="player-name" id="name-1">Opponent</div>
+                        <div class="player-name green-text" id="name-1">OPPONENT</div>
                         <div class="player-score" id="score-1">0</div>
                     </div>
                 </div>
-                <div id = "status" style = "display: none" >
-                    <div id = "win" class = "row" style = "display: none">
-                            <h3>You win!</h3>
-                    </div>
-                    <div id = "lose" class = "row" style = "display: none">
-                            <h3>You lose!</h3>
-                    </div>
-                    <div id = "tie" class = "row" style = "display: none">
-                            <h3>Tie! Score doesn't change.</h3>
-                    </div>
+                <div class = "row">
+                        <h3 class = "green-text" id = "status"></h3>
                 </div>
                 <div class = "row">
                     <div class = "col s12">
