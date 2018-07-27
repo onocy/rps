@@ -62,7 +62,7 @@ function newGame(){
 function guess(val) {
   var opponentChoice = Math.floor((Math.random() * 3))
   document.getElementById('try-again').style.display = "block";
-  document.getElementById('opp-choice').innerHTML = "<h5>Opponent Chooses: </h5>" + "<img src = '" + opponentChoice + ".png'>";
+  document.getElementById('opp-choice').innerHTML = "<h5>Opponent Chooses: </h5>" + "<img src = 'img/" + opponentChoice + ".png'>";
   roundEnd(val, opponentChoice);
 }
 
